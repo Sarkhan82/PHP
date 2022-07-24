@@ -1,12 +1,18 @@
 <?php
 $insultes = ["merde", "con"];
-
-$phrase = readline("Taper une phrase : ");
+$asterisque = [];
 
 foreach ($insultes as $insulte) {
+    $firstletter = substr($insulte, 0, 1);
+    $filter[] = $firstletter . str_repeat("*", strlen($insulte) -1);
+}
+$phrase = readline("Taper une phrase : ");
+$phrase = str_replace($insultes, $filter, $phrase);
+
+/* foreach ($insultes as $insulte) {
     $filter = str_repeat("*", strlen($insulte));
     $phrase = str_replace($insulte, $filter, $phrase);   
-}
+} */
 echo $phrase;
 ?>
 
